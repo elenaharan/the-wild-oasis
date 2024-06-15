@@ -38,3 +38,14 @@ const Discount = styled.div`
   font-weight: 500;
   color: var(--color-green-700);
 `;
+function CabinRow({ cabin }) {
+  const { image } = cabin;
+
+  return (
+    <TableRow>
+      <Img src={image} />
+    </TableRow>
+  );
+}
+
+export default CabinRow;

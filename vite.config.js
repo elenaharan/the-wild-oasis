@@ -10,6 +10,7 @@ export default defineConfig({
       overrideConfig: {
         rules: {
           "no-unused-vars": "warn",
+          "react/prop-types": "off",
         },
       },
     }),
