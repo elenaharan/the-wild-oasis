@@ -1,29 +1,30 @@
 import Button from "../../ui/Button";
 import Modal from "../../ui/Modal";
 import CreateCabinForm from "./CreateCabinForm";
-import CabinTable from "./CabinTable";
 
 //Converting a regular modal component to a compound component:
-//Define the API of this component (the initial structure)
+//First define the API of this component (the initial structure)
 
 function AddCabin() {
   return (
-    <Modal>
-      {/* To have multiple windows we can associate name of prop with name of element */}
-      <Modal.Open opens="cabin-form">
-        <Button>Add new cabin</Button>
-      </Modal.Open>
-      <Modal.Window name="cabin-form">
-        <CreateCabinForm />
-      </Modal.Window>
+    <div>
+      <Modal>
+        {/*To connect button witht he window - we need to give them same prop name */}
+        <Modal.Open opens="cabin-form">
+          <Button>Add new cabin</Button>
+        </Modal.Open>
+        <Modal.Window name="cabin-form">
+          <CreateCabinForm />
+        </Modal.Window>
 
-      <Modal.Open opens="table">
+        {/* <Modal.Open opens="table">
         <Button>View cabin table</Button>
-      </Modal.Open>
-      <Modal.Window name="table">
+        </Modal.Open>
+        <Modal.Window name="table">
         <CabinTable />
-      </Modal.Window>
-    </Modal>
+        </Modal.Window> */}
+      </Modal>
+    </div>
   );
 }
 
