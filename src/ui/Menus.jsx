@@ -91,7 +91,6 @@ function Toggle({ id }) {
 
     //select the closest button elemenet and calculate its position
     const rect = e.target.closest("button").getBoundingClientRect();
-    console.log(rect);
     setPosition({
       x: window.innerWidth - rect.x - rect.width,
       y: rect.y + rect.height + 8,
