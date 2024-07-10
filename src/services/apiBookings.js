@@ -7,7 +7,9 @@ export async function getBookings() {
     .from("bookings")
     .select(
       "id, created_at, startDate, endDate, numNights, numGuests, status, totalPrice, cabins(name), guests(fullName, email)"
-    );
+    )
+    .eq("status", "checked-out")
+    .gte("totalPrice", "5000");
 
   if (error) {
     console.error(error);
