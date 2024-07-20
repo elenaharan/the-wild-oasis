@@ -123,13 +123,6 @@ function BookingRow({
                 Check out
               </Menus.Button>
             )}
-            {status === "checked-out" && (
-              <Menus.Button
-                onClick={() => deleteBooking(bookingId)}
-                disabled={isDeletingBooking}
-              ></Menus.Button>
-            )}
-
             <Modal.Open opens="delete">
               <Menus.Button icon={<HiTrash />}>Delete booking</Menus.Button>
             </Modal.Open>
@@ -140,6 +133,7 @@ function BookingRow({
           <ConfirmDelete
             resourceName="booking"
             onConfirm={() => deleteBooking(bookingId)}
+            disabled={isDeletingBooking}
           />
         </Modal.Window>
       </Modal>
