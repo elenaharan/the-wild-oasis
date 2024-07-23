@@ -13,7 +13,7 @@ export function useLogin() {
     onSuccess: ({ user }) => {
       //we are manually setting user data into the cache by specifying key "user", and passing in the corresponding value
       queryClient.setQueryData(["user"], user);
-      navigate("/dashboard");
+      navigate("/dashboard", { replace: true });
     },
     onError: (err) => {
       console.log("Error:", err.message);
