@@ -12,7 +12,7 @@ export function useLogin() {
     mutationFn: ({ email, password }) => loginApi({ email, password }),
     onSuccess: ({ user }) => {
       //we are manually setting user data into the cache by specifying key "user", and passing in the corresponding value
-      queryClient.setQueryData(["user"], user);
+      queryClient.setQueryData(["user"], user.user);
       navigate("/dashboard", { replace: true });
     },
     onError: (err) => {
