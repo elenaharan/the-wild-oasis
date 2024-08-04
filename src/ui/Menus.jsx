@@ -87,6 +87,7 @@ function Toggle({ id }) {
 
   //here we are going to calculate the position of the button, so that we can determine where to render the list
   function handleClick(e) {
+    e.stopPropagation();
     if (openId === "" || openId !== id ? open(id) : close());
 
     //select the closest button elemenet and calculate its position
@@ -106,7 +107,7 @@ function Toggle({ id }) {
 
 function List({ id, children }) {
   const { openId, position, close } = useContext(MenusContext);
-  const ref = useOutsideClick(close);
+  const ref = useOutsideClick(close, false);
 
   if (openId !== id) return null;
 
